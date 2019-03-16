@@ -24,11 +24,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         for (Sensor s: sensors) {
             Log.d("SENSOR", "名前は" + s.getName());
         }
+
+        // 加速度センサを設定
+        Sensor ac = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sm.registerListener(this, ac, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
     public void onSensorChanged(SensorEvent sev) {
-
+        Log.d("SENSOR", "xは" + sev.values[0] + " yは" + sev.values[1] + " zは" + sev.values[2]);
     }
 
     @Override
