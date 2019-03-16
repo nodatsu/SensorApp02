@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         // 加速度センサを設定
         Sensor ac = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sm.registerListener(this, ac, SensorManager.SENSOR_DELAY_NORMAL);
+        sm.registerListener(this, ac, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     @Override
