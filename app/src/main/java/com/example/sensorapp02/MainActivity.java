@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent sev) {
         Log.d("SENSOR", "xは" + sev.values[0] + " yは" + sev.values[1] + " zは" + sev.values[2]);
+        cv.setPos(sev.values[0], sev.values[1]);
     }
 
     @Override
